@@ -13,6 +13,16 @@ class Person {
 
 public class Q5 {
     // TODO: olderPerson 메서드 작성 (두 Person 중 나이가 더 많은 객체를 반환)
+    public Person olderPerson(Person p1, Person p2) {
+        if (p1.age > p2.age) {
+            return p1;
+        } else if (p1.age < p2.age) {
+            return p2;
+        } else {
+            return null;
+        }
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String name1 = sc.next();
@@ -21,7 +31,19 @@ public class Q5 {
         int age2 = sc.nextInt();
         Person p1 = new Person(name1, age1);
         Person p2 = new Person(name2, age2);
-        // Person older = olderPerson(p1, p2); // TODO: olderPerson 메서드 작성 후 주석 해제
+
+        Q5 q5 = new Q5();
+
+        Person older = q5.olderPerson(p1, p2); // TODO: olderPerson 메서드 작성 후 주석 해제
         // TODO: older.name과 older.age 출력
+
+        if (older != null) {
+            System.out.println(older.name + " " + older.age);
+        } else {
+            System.out.println("두 사람의 나이가 같습니다.");
+        }
+
+        sc.close();
+
     }
 }
