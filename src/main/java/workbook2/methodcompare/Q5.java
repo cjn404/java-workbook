@@ -7,10 +7,12 @@ class Statistics {
     static int sum = 0;
     void addNumber(int n) {
         // TODO: count와 sum 갱신
+        count++;
+        sum += n;
     }
     static double average() {
         // TODO: 평균 반환
-        return 0;
+        return (double) sum / count;
     }
 }
 
@@ -23,5 +25,11 @@ public class Q5 {
             stat.addNumber(sc.nextInt());
         }
         // TODO: Statistics.average() 출력
+        // static 메서드는 Statistics 클래스에 속하는 메서드이므로,
+        // 클래스명으로 직접 호출
+        System.out.println(Statistics.average());
+
+        sc.close();
+
     }
 }
