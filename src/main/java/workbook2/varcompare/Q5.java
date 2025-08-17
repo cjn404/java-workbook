@@ -6,10 +6,14 @@ class Library {
     static int totalBooks = 0;
     int borrowed = 0;
     void borrow(int n) {
+        borrowed += n;
+        totalBooks += n;
         // TODO: borrowed와 totalBooks 증가
     }
     void returnBooks(int n) {
         // TODO: borrowed와 totalBooks 감소
+        borrowed -= n;
+        totalBooks -= n;
     }
 }
 
@@ -25,5 +29,9 @@ public class Q5 {
             else user.returnBooks(n);
         }
         // TODO: user.borrowed와 Library.totalBooks 출력
+        System.out.println(user.borrowed + " " + user.totalBooks);
+
+        sc.close();
+
     }
 }
