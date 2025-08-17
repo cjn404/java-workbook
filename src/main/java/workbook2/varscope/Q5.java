@@ -3,14 +3,23 @@ package main.java.workbook2.varscope;
 import java.util.Scanner;
 
 class Calculator {
+    // 클래스 변수 -> 연산 기록 저장
     static String history = "";
     int add(int a, int b) {
         // TODO: 연산 결과 저장 후 반환
-        return 0;
+        int result = a + b;
+        // 연산 기록 저장
+        if (!history.isEmpty()) history += ", ";    // 이전 기록이 있으면 구분자 ", " 추가
+        history += a + " + " + b;
+        return result;
     }
     int sub(int a, int b) {
         // TODO: 연산 결과 저장 후 반환
-        return 0;
+        int result = a - b;
+        // 연산 기록 저장
+        if (!history.isEmpty()) history += ", ";
+        history += a + " - " + b;
+        return result;
     }
 }
 
@@ -30,5 +39,16 @@ public class Q5 {
             }
         }
         // TODO: results 배열과 Calculator.history 출력
+        // 각 연산 결과 출력
+        for (int result : results) {
+            System.out.print(result + " ");
+        }
+        System.out.println();
+
+        // 연산 기록 출력
+        System.out.println(Calculator.history);
+
+        sc.close();
+
     }
 }
