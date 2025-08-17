@@ -23,5 +23,8 @@ public class Q2 {
         System.out.println(c1.name + " " + Car.totalCars);
         System.out.println(c2.name + " " + Car.totalCars);
         System.out.println(c3.name + " " + Car.totalCars);
+
+        sc.close();
+
     }
 }
