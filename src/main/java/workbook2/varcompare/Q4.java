@@ -9,6 +9,8 @@ class Product {
         this.stock = stock;
     }
     void sell(int quantity) {
+        stock -= quantity;
+        totalSold += quantity;
         // TODO: stock 감소, totalSold 증가
     }
 }
@@ -24,5 +26,9 @@ public class Q4 {
             p.sell(q);
         }
         // TODO: p.stock과 Product.totalSold 출력
+        System.out.println(p.stock + " " + p.totalSold);
+
+        sc.close();
+
     }
 }
